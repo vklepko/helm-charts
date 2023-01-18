@@ -6,7 +6,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "domain-exporter.labels" . | nindent 4 }}
-    {{- if .Values.metrics.labels }}
+    {{- if .Values.rules.labels }}
     {{- toYaml .Values.rules.labels | nindent 4 }}
     {{- end }}
 spec:
